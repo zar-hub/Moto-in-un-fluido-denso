@@ -1,0 +1,134 @@
+\documentclass[11pt]{article}
+\usepackage{lastpage, fancyhdr,color,amsmath,amssymb,amsfonts,amscd, graphicx,latexsym,multirow}
+\usepackage{makecell}
+\usepackage{lipsum}
+\usepackage{eurosym}
+\usepackage[all]{xy}
+\pagestyle{empty}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\setlength\voffset{-1in}
+\setlength\hoffset{-1in}
+\setlength\topmargin{3cm}
+\setlength\oddsidemargin{2.5cm}
+\setlength\textheight{8in}
+\setlength\textwidth{6.51in}\setlength\footskip{1in}
+\setlength\headheight{12pt}
+\setlength\headsep{0.06in}
+\usepackage{caption, subcaption, amsfonts}
+\usepackage{setspace}
+\usepackage{epstopdf,sectsty}
+\usepackage{relsize}
+\usepackage{pgf, float}
+\usepackage{url}
+\usepackage{natbib}
+\usepackage{csquotes}
+\usepackage{wrapfig}
+
+\definecolor{light-gray}{gray}{0.55}
+
+\renewcommand{\contentsname}{Contenuti}
+\renewcommand{\listfigurename}{Figure}
+
+\title{Moto in un fluido denso}
+
+\begin{document}
+\pagestyle{fancy}
+   \lhead{}\rhead{}
+   \lfoot{\textcolor{light-gray}{\small Moto in un fluido denso}}
+        \cfoot{{\thepage}}
+        \rfoot{}
+  \renewcommand{\headrulewidth}{0pt}
+
+
+
+
+\newpage
+\phantom{22}
+\vspace{-3cm}
+
+\begin{center}
+% Logo copyright belongs to TUBITAK
+% downloaded from https://www.tubitak.gov.tr/sites/default/files/tubitak_logo.jpg
+\includegraphics[width=100px]{images/logo.jpg}
+
+\bigskip
+\bigskip
+
+
+\bigskip
+{\fontsize{15}{10}\selectfont 
+\bigskip
+
+
+\bigskip
+\medskip
+{ \textbf{\Huge Moto in un fluido denso \\}}}
+
+
+\bigskip
+\medskip
+{ \textbf{ Alberto Mazzarotto}}
+\bigskip
+
+\end{center}
+
+\bigskip
+\bigskip
+
+\thispagestyle{empty}
+
+
+\begin{center}
+{\Large novembre 2020}
+\end{center}
+
+
+\linespread{1.5}
+
+\newpage\setlength{\parskip}{3mm} 
+\onehalfspacing
+\bigskip
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\begin{center}
+
+{\LARGE \bf Introduzione}
+
+\end{center}
+\addcontentsline{toc}{section}{Introduzione}
+
+\input{intro}
+\newpage
+
+\setlength{\parskip}{1mm} 
+
+\tableofcontents
+\listoffigures
+
+
+\newpage \setlength{\parskip}{3mm}
+\phantom{ss}
+\vspace{-2.5cm}
+\sectionfont{\centering}
+
+\renewcommand{\thesection}{\arabic{section}.}
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\section{PARTE TEORICA}
+\input{theory}
+
+\newpage
+
+\section{PARTE PRATICA}
+\input{practice}
+
+\newpage
+
+\section{DATI GREZZI}
+\input{data}
+
+\end{document}

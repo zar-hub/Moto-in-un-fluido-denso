@@ -1,0 +1,111 @@
+\subsection{Cenni preliminari}
+La situazione che prendiamo in considerazione è la seguente: una sfera di cui ci è noto diametro e densità si muove all'interno di un fluido con densità conosciuta. Calcolare la velocità \(v\) a cui si muove la sfera nel generico istante di tempo \(t\). Supponiamo che nell'istante \(t_0 = 0\) la pallina si muova con velocità \(v_0\).
+\hfill 
+
+\begin{flushleft}
+\textbf{Nomenclatura preliminare}
+\end{flushleft}
+\begin{center}
+\begin{tabular}{ | m{5em} | m{1.4cm}| m{10em} | } 
+\hline
+variabile &  u.d.m. & descrizione \\ 
+\hline
+\hline
+\(\phi_{sfera}\) & m & diametro sfera \\ 
+\hline
+\(\rho_{sfera}\) & \(kg/m^3\) & densità sfera \\ 
+\hline
+\(V\) & \(m^3\) & volume sfera \\ 
+\hline
+\(m\) & \(kg\) & massa sfera \\ 
+\hline
+\(\rho_{fluido}\) & \(kg/m^3\) & densità fluido \\ 
+\hline
+\(F_p\) & \(N\) & forza peso \\ 
+\hline
+\(F_{pf}\) & \(N\) & forza peso nel fluido \\ 
+\hline
+\(F_a\) & \(N\) & forza di Archimede \\ 
+\hline
+\(F_s\) & \(N\) & attrito di Stokes \\ 
+\hline
+\(g\) & \(m/s^2\) & accelerazione gravità \\ 
+\hline
+\(b\) & \(kg/s\) & coefficiente di attrito \\ 
+\hline
+\end{tabular}
+\end{center}
+
+\begin{flushleft}
+\textbf{Peso di un oggetto in un fluido}\\
+Usando Newton e il principio di Archimede posso ricavare il peso di un corpo in un fluido.
+\end{flushleft}
+\begin{equation}\label{eq4}
+    \begin{split}
+    F_{pf} &= mg - V\rho_{fluido}\;g\\
+        &= V\rho_{corpo}g - V\rho_{fluido}\;g\\
+        &=Vg(\rho_{sfera} - \rho_{fluido})
+    \end{split}
+\end{equation}
+
+\subsection{Analisi}
+Partiamo con il trovare la risultante delle forze che agiscono sulla nostra sfera che sono forza peso, spinta di Archimede e attrito esercitato dal fluido.
+\begin{equation}\label{eq5}
+\vec{R} = \vec{F_p} + \vec{F_a} + \vec{F_s}
+\end{equation}
+Essendo il moto mono-direzionale assegno alla direzione di \(g\) verso positivo\footnote{La direzione verso il basso per intenderci.}. Sostituisco nell'equazione (\ref{eq4}) la (\ref{eq2}) e la (\ref{eq3}) tenendo conto dei versi dei vettori.
+\begin{equation}\label{eq6}
+    \begin{split}
+    R &= F_p - F_a - F_s\\
+            &= mg - V\rho_{fluido}\;g -bv
+    \end{split}
+\end{equation}
+Ricordandoci che \(m=V\rho_{sfera}\) e che, per la II legge di Newton \(R = ma\), risolvo l'equazione per a. Uso anche l'equazione (\ref{eq4}).
+\begin{equation}\label{eq7}
+    \begin{split}
+    ma  &= mg - V\rho_{fluido}\;g -bv\\
+        &= V\rho_{sfera}\;g - V\rho_{fluido}\;g -bv\\   
+        &= Vg(\rho_{sfera} - \rho_{fluido}) -bv\\
+        &= F_{pf} - bv\\
+    a   &= \frac{F_{pf} - bv}{m}\\
+    a   &=\frac{b}{m}\left(\frac{F_{pf}}{b} - v\right)
+    \end{split}
+\end{equation}
+Possiamo notare ora che \([\frac{b}{m}] = \frac{1}{s}\), è dunque una frequenza che chiamo \(\frac{1}{\mathcal{T}}\), e che \([\frac{F_{pf}}{b}] = \frac{m}{s}\) è quindi una velocità che chiamo \(v_l\). Riscrivendo l'equazione (\ref{eq7}) tenendo conto della nuova nomenclatura ottengo una formula molto carina:
+\begin{equation}\label{eq8}
+    a = \frac{1}{\mathcal{T}}\left(v_l - v\right)
+\end{equation}
+Ma \(a\) non è altro che la derivata di \(v\) rispetto al tempo, mi trovo dunque di fronte ad un equazione differenziale che sono in grado di risolvere usando gli integrali.
+\begin{equation}\label{eq9}
+    \begin{split}
+    a = \frac{1}{\mathcal{T}}\left(v_l - v\right)\\
+    \frac{a}{v_l - v} = \frac{1}{\mathcal{T}}\\
+    \int\frac{a}{v_l - v}\,dt  = \int\frac{1}{\mathcal{T}}\,dt\\
+    \int\frac{dv}{v_l - v}\,\frac{dt}{dt}  = \int\frac{1}{\mathcal{T}}\,dt\\
+    -\log\lvert v_l - v \rvert = \frac{1}{\mathcal{T}}t + C\\
+    \log\lvert v_l - v \rvert = -\frac{1}{\mathcal{T}}t + C
+    \end{split}
+\end{equation}
+Supponendo ora che \(v < v_l\) possiamo togliere il valore assoluto e applicare l'esponenziale.
+\begin{equation}\label{eq10}
+    \begin{split}
+    \log(v_l - v) = -\frac{1}{\mathcal{T}}t\\
+    v_l - v = e^{-\frac{1}{\mathcal{T}}t + C}\\
+    v = v_l - e^{-\frac{1}{\mathcal{T}}t}e^C\\
+    v(t) = v_l - C'e^{-\frac{1}{\mathcal{T}}t}\\
+    \end{split}
+\end{equation}
+Abbiamo finalmente ricavato l'equazione della velocità, per trovare \(C'\) dobbiamo utilizzare le condizioni iniziali che si trovano nei cenni preliminari all'inizio di questo capitolo.
+\begin{equation}\label{eq11}
+    \begin{cases}
+    v_0 = v_l - C'\\
+    C' = v_0 - v_l
+    \end{cases} \Rightarrow v(t) \; \;= v_l - (v_0 - v_l)e^{-\frac{1}{\mathcal{T}}t}
+\end{equation}
+Se \(v_0 = 0\) trovo la seguente formula e ho finito:
+\begin{equation}\label{eq12}
+    \begin{split}
+    v(t) &= v_l - v_l e^{-\frac{1}{\mathcal{T}}t}\\
+         &= v_l (1 -  e^{-\frac{1}{\mathcal{T}}t})
+    \end{split}
+\end{equation}
